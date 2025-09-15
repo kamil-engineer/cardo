@@ -21,6 +21,7 @@
   --color-primary: #f4d04e;
   --color-gray-500: #6b6b6b;
   --color-gray-950: #121212;
+  --color-shadow: #000000;
 
   --font-general: "Figtree", sans-serif;
   --fs-xs: 0.875rem; /* 14px */
@@ -51,4 +52,90 @@
 
 body {
   font-family: var(--font-general);
+  background-color: var(--color-primary);
+}
+
+.content {
+  min-height: 100vh;
+  padding: 10rem var(--space-5);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__image {
+  margin-bottom: var(--space-5);
+}
+
+.card__image img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card {
+  max-width: 23.4375rem;
+  width: 100%;
+
+  color: var(--color-shadow);
+  border-radius: 16px;
+  padding: var(--space-5);
+  background-color: var(--color-neutral);
+  box-shadow: inset 0 0 0 1px var(--color-shadow),
+    6px 6px 0 0 var(--color-shadow);
+}
+
+.card__tags {
+  display: flex;
+  gap: var(--space-1);
+  flex-wrap: wrap;
+
+  margin-bottom: var(--space-4);
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.375rem var(--space-3);
+  font-weight: 700;
+  font-size: var(--fs-xs);
+  border-radius: 4px;
+}
+
+.tag--primary {
+  color: var(--color-shadow);
+  background-color: var(--color-primary);
+}
+
+.card__published {
+  font-size: var(--fs-xs);
+
+  margin-bottom: var(--space-4);
+}
+
+.card__title {
+  font-size: var(--fs-lg);
+  margin-bottom: var(--space-4);
+}
+
+.card__description {
+  font-size: var(--fs-sm);
+  font-weight: 300;
+  margin-bottom: var(--space-4);
+}
+
+.author {
+  display: flex;
+  gap: 0.625rem;
+  align-items: center;
+}
+
+.author__name {
+  font-size: var(--fs-xs);
+}
+
+@media (max-width: 36rem) {
+  .card__title {
+    font-size: 1.25rem;
+  }
 }
